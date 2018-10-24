@@ -1,0 +1,600 @@
+{
+	"info": {
+		"_postman_id": "7bb192d4-c4c9-430c-8b2c-bad50e061355",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar Todos os Usuários",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"users"
+					]
+				},
+				"description": "Lista e exibe todos os usuários cadastrados na base."
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Novo Usuário",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Lionel Messi",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "messi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "(41) 99999-8877",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				},
+				"description": "Cadastra um novo usuário na base."
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "X-Requested-With",
+						"type": "text",
+						"value": "XMLHttpRequest"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "salah@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "remember_me",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "Realiza o Login/Autenticação de um usuário na API. O \"access_token\" será utilizado nos métodos que precisam de \"Authorization\""
+			},
+			"response": []
+		},
+		{
+			"name": "Detalhes de um Usuário",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijc5MzkyNDgwMjhiODUxYjlmZGEwOGY1NmNjYzlkYzY5MDMxODg4MWRmZmYwMzEwZGU1MmViYzM1OWZmNjZiNGNmMjdhYTQ1ODA0NGI3NjEyIn0.eyJhdWQiOiIxIiwianRpIjoiNzkzOTI0ODAyOGI4NTFiOWZkYTA4ZjU2Y2NjOWRjNjkwMzE4ODgxZGZmZjAzMTBkZTUyZWJjMzU5ZmY2NmI0Y2YyN2FhNDU4MDQ0Yjc2MTIiLCJpYXQiOjE1NDA0MTI3NjcsIm5iZiI6MTU0MDQxMjc2NywiZXhwIjoxNTcxOTQ4NzY3LCJzdWIiOiI2Iiwic2NvcGVzIjpbXX0.PTlrcwxz_JuoGNKQqLgBnWi8MVgqnYgfd7NlJfGIWBcqNOe803gmhP3hmapdhSzHkfCDtTcU-zHXLl8rpyK3HMyU2NvuzMWRqJ_nwJ3ca8IbWCs-4OMXQUrb_nVIQTz7UlCyGlnQk8HMLnDi3MphSchgcpREniKKzgWgmyYpJg0HOrPIQmXnqqEaa_Qe0FrVsid7Go82G0DLjZy7BbTn8FO-yeAOTCb3DBS1vcP37EVVRoXH4eI7Zcs9uKBaAEuV9pV25uBQcbg7LxGoyWBlShhl2Sub0aUi3jhrBlkv8FbyAHUsQzKIwEwy0hhnhWxMegi4qrTpEuZD1JT1Zqz9QNG3AbyZHnx-a-LXCN-pmmmfTfRW5yVv170CchroLf7Q4rNV3ZmBoWXo0p2iWS--xePjrm6zTgmBHbhNekuqaqxr2wqDdR3nsAqOiJfCAoVsNQpYG22LDKr-aXOj88eaZayiHi07ljnq7Q_18vZOPGFlPrc7xsfo-8IWFkdwac50ydqs08-9kp9O2c8QV6Jxgtf_7MxcUUnl8pWg2gCVqArOAwa87DngXsEPbLABDgiE40WgUXLjKwh1QlfezPRw_Sd7J3y5OcYTCucfPX7AzEiWlzuukUEXCxyWKM67sa5B8QC2ObbpILtKdj-ZFvLi2vjuuLJc-oATB1c1RsWQIas"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"user"
+					]
+				},
+				"description": "Exibe os detalhes do usuário autenticado na API. Utiliza o \"access_token\", no Header (Bearer {access_token})"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3ZWFiNWIwNmYwZjNiMDg1YTE0OTZlODI3NjViNGZkOTYzY2YyMmQ1MGY3YTVlNmYxYTdmODI4YmE3ZDU0YTJjMGVlZTZkNzYyNGUyYTIxIn0.eyJhdWQiOiIxIiwianRpIjoiOTdlYWI1YjA2ZjBmM2IwODVhMTQ5NmU4Mjc2NWI0ZmQ5NjNjZjIyZDUwZjdhNWU2ZjFhN2Y4MjhiYTdkNTRhMmMwZWVlNmQ3NjI0ZTJhMjEiLCJpYXQiOjE1NDA0MDk3OTIsIm5iZiI6MTU0MDQwOTc5MiwiZXhwIjoxNTcxOTQ1NzkyLCJzdWIiOiI0Iiwic2NvcGVzIjpbXX0.CzMTHaQMmwbTIO2yzqYdY-WiEpl3R0ZjGEX5Y4CubKpFc9NB-_UuAclLOzbMdNVn4NbGVORtt32VziXBhSdN5cyvSfNTqI58ITU0aHy75qJgIjkL_M53gGUOFNtIXHlBu_APW0hP1TUVZ9yJCCRCRxGEb3LMODCucdqpoaW3IluwWiXmIpBNJoFbry4mI_gQ1rojHdUkkOVIa-9dNpoq-hGWth1gi_cNfV_xu2pAzLh5t0uyZJaFBrVmQ3LR1qa85Jat-IaObnvWjWp2XLv2kqcNgbEUn7y3KLr0fyf5XRnm3YzluRygejwNzPT4GwZ5tpo6s9VvpH148ILbkryWPUWRTxh5fC6vRAxlHhKFA87RJNjcBv1XYeOyooV99beiMPD1897HJvdy6lvQ58n9CdrjZRvSORq13EfyaYY7cyvQuJ2GT6Vj6lGJkxS440qiqgY9gfBQ_QOBlePG5CNKwvQXYrHHQ8cqqnHpf9tnHkiDItSRc1Eodm3L0wln7FntaaAlqAUlmGrJEA2oMBvW-soaSRVk8QTtMQohZzLj1rPFCXEI_qKPZihvDrPUP5VoIi8PvjIiWCYn9OVDhkj5nvGrqGAfh2Ze92zhI0xybfD1flGdRzKTB5UPsn1pZ8HQuY9pRx_xu1yTPAjCbB6Du_M5LxSgnFiLHfar6dK0UMo"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				},
+				"description": "Realiza o logout do usuário autenticado na API. Utiliza o \"access_token\", no Header (Bearer {access_token})"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Todas as Mensagens",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"messages"
+					]
+				},
+				"description": "Lista e exibe todas as mensagens cadastradas na base."
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Nova Mensagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "X-Requested-With",
+						"type": "text",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBiNmY0OWNjYTcyN2FhMjUxODNjNzM4YjZhYjZkYWVjMjIzMGQ3ZjA3MmMzZjVkZWMxZTViMTRhMjNmNjRmOTg5YWI0N2VhOTExMTM2NDgyIn0.eyJhdWQiOiIxIiwianRpIjoiMGI2ZjQ5Y2NhNzI3YWEyNTE4M2M3MzhiNmFiNmRhZWMyMjMwZDdmMDcyYzNmNWRlYzFlNWIxNGEyM2Y2NGY5ODlhYjQ3ZWE5MTExMzY0ODIiLCJpYXQiOjE1NDA0MTQ4ODAsIm5iZiI6MTU0MDQxNDg4MCwiZXhwIjoxNTcxOTUwODgwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ggazY9ICv_FQ0ILRi59E38npGaOrhYofELzbkZ8EFK_AmoCje398AvHP9RuoFpAmlhXsKTbbAf_yoSa4Ww-HyM1cBpy4i_ZsokGxke_6SWKAXSbVurvmqTy09OU8v3dkF2O1adx68EDMb8HZH9oRdX9UbOilgwJsewZwfN6VcqYpCc2dVLGUNmk219wR_2T8zZ3ZVbtbgp0br_dratxpoSN1Dp9RwH0qBCcWIkmHNj72fTN99FevO5gnzY70hUKCO9YKmkTY0QkvOvYZYWWRTDH05X59NFvQuf1bWLy4y1XTjcpY_NK1hXTStfowiAoffchqj9_jfWdalmE1Sk3dqM4dfwhIWvL8JrajQLEpt7lvvFmEtde9pcLWawBY7MAZwH60ojtXrw0T5g0ZAif6S761dRxvJRhlVdpaHkn70GfJNlNzzps7Bx-7UGVdR0tybBWRSZSx4kwO3eCKpgLS93DdXebA-P8gzCfWuJM3BgAf-N-BQ_5MkauzfSupC0XWSVsFnUvVuaTxf214xccfJ2rk5cvZcuUD-v_amVrkTSF3XB6yC2XtU-8uiYLtk5Q0qcL3A5r4pDcrXPaRWNMqCdipgVn8Rva9eu-C3pYLIzvff3FhXfQI46dYytF1TdQJqlL9xMgyvz3Eva2t-x-J4RciDZGJTsWo1J3gGQW2eQ8"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Nova mensagem",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Descrição da nova mensagem.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/messages/store",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"messages",
+						"store"
+					]
+				},
+				"description": "Cadastra uma nova mensagem para o usuário autenticado na API."
+			},
+			"response": []
+		},
+		{
+			"name": "Detalhes de uma Mensagem",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/messages/show/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"messages",
+						"show",
+						"9"
+					]
+				},
+				"description": "Exibe os detalhes de uma mensagem."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Mensagens por Usuário",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/messages/showbyuser/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"messages",
+						"showbyuser",
+						"1"
+					]
+				},
+				"description": "Lista e exibe todas as mensagens do usuário desejado."
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Mensagem Usuário Autenticado",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBiNmY0OWNjYTcyN2FhMjUxODNjNzM4YjZhYjZkYWVjMjIzMGQ3ZjA3MmMzZjVkZWMxZTViMTRhMjNmNjRmOTg5YWI0N2VhOTExMTM2NDgyIn0.eyJhdWQiOiIxIiwianRpIjoiMGI2ZjQ5Y2NhNzI3YWEyNTE4M2M3MzhiNmFiNmRhZWMyMjMwZDdmMDcyYzNmNWRlYzFlNWIxNGEyM2Y2NGY5ODlhYjQ3ZWE5MTExMzY0ODIiLCJpYXQiOjE1NDA0MTQ4ODAsIm5iZiI6MTU0MDQxNDg4MCwiZXhwIjoxNTcxOTUwODgwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ggazY9ICv_FQ0ILRi59E38npGaOrhYofELzbkZ8EFK_AmoCje398AvHP9RuoFpAmlhXsKTbbAf_yoSa4Ww-HyM1cBpy4i_ZsokGxke_6SWKAXSbVurvmqTy09OU8v3dkF2O1adx68EDMb8HZH9oRdX9UbOilgwJsewZwfN6VcqYpCc2dVLGUNmk219wR_2T8zZ3ZVbtbgp0br_dratxpoSN1Dp9RwH0qBCcWIkmHNj72fTN99FevO5gnzY70hUKCO9YKmkTY0QkvOvYZYWWRTDH05X59NFvQuf1bWLy4y1XTjcpY_NK1hXTStfowiAoffchqj9_jfWdalmE1Sk3dqM4dfwhIWvL8JrajQLEpt7lvvFmEtde9pcLWawBY7MAZwH60ojtXrw0T5g0ZAif6S761dRxvJRhlVdpaHkn70GfJNlNzzps7Bx-7UGVdR0tybBWRSZSx4kwO3eCKpgLS93DdXebA-P8gzCfWuJM3BgAf-N-BQ_5MkauzfSupC0XWSVsFnUvVuaTxf214xccfJ2rk5cvZcuUD-v_amVrkTSF3XB6yC2XtU-8uiYLtk5Q0qcL3A5r4pDcrXPaRWNMqCdipgVn8Rva9eu-C3pYLIzvff3FhXfQI46dYytF1TdQJqlL9xMgyvz3Eva2t-x-J4RciDZGJTsWo1J3gGQW2eQ8"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Nova mensagem (Editada)",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Descrição da nova mensagem (Editada)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/message/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"message",
+						"update",
+						"1"
+					]
+				},
+				"description": "Atualiza as informações de uma mensagem."
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Mensagem Usuário Autenticado",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBiNmY0OWNjYTcyN2FhMjUxODNjNzM4YjZhYjZkYWVjMjIzMGQ3ZjA3MmMzZjVkZWMxZTViMTRhMjNmNjRmOTg5YWI0N2VhOTExMTM2NDgyIn0.eyJhdWQiOiIxIiwianRpIjoiMGI2ZjQ5Y2NhNzI3YWEyNTE4M2M3MzhiNmFiNmRhZWMyMjMwZDdmMDcyYzNmNWRlYzFlNWIxNGEyM2Y2NGY5ODlhYjQ3ZWE5MTExMzY0ODIiLCJpYXQiOjE1NDA0MTQ4ODAsIm5iZiI6MTU0MDQxNDg4MCwiZXhwIjoxNTcxOTUwODgwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ggazY9ICv_FQ0ILRi59E38npGaOrhYofELzbkZ8EFK_AmoCje398AvHP9RuoFpAmlhXsKTbbAf_yoSa4Ww-HyM1cBpy4i_ZsokGxke_6SWKAXSbVurvmqTy09OU8v3dkF2O1adx68EDMb8HZH9oRdX9UbOilgwJsewZwfN6VcqYpCc2dVLGUNmk219wR_2T8zZ3ZVbtbgp0br_dratxpoSN1Dp9RwH0qBCcWIkmHNj72fTN99FevO5gnzY70hUKCO9YKmkTY0QkvOvYZYWWRTDH05X59NFvQuf1bWLy4y1XTjcpY_NK1hXTStfowiAoffchqj9_jfWdalmE1Sk3dqM4dfwhIWvL8JrajQLEpt7lvvFmEtde9pcLWawBY7MAZwH60ojtXrw0T5g0ZAif6S761dRxvJRhlVdpaHkn70GfJNlNzzps7Bx-7UGVdR0tybBWRSZSx4kwO3eCKpgLS93DdXebA-P8gzCfWuJM3BgAf-N-BQ_5MkauzfSupC0XWSVsFnUvVuaTxf214xccfJ2rk5cvZcuUD-v_amVrkTSF3XB6yC2XtU-8uiYLtk5Q0qcL3A5r4pDcrXPaRWNMqCdipgVn8Rva9eu-C3pYLIzvff3FhXfQI46dYytF1TdQJqlL9xMgyvz3Eva2t-x-J4RciDZGJTsWo1J3gGQW2eQ8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/message/destroy/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"message",
+						"destroy",
+						"2"
+					]
+				},
+				"description": "Apaga uma mensagem da base, somente se está estiver vinculada ao usuário autenticado na API."
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Info Usuário Autenticado",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBiNmY0OWNjYTcyN2FhMjUxODNjNzM4YjZhYjZkYWVjMjIzMGQ3ZjA3MmMzZjVkZWMxZTViMTRhMjNmNjRmOTg5YWI0N2VhOTExMTM2NDgyIn0.eyJhdWQiOiIxIiwianRpIjoiMGI2ZjQ5Y2NhNzI3YWEyNTE4M2M3MzhiNmFiNmRhZWMyMjMwZDdmMDcyYzNmNWRlYzFlNWIxNGEyM2Y2NGY5ODlhYjQ3ZWE5MTExMzY0ODIiLCJpYXQiOjE1NDA0MTQ4ODAsIm5iZiI6MTU0MDQxNDg4MCwiZXhwIjoxNTcxOTUwODgwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ggazY9ICv_FQ0ILRi59E38npGaOrhYofELzbkZ8EFK_AmoCje398AvHP9RuoFpAmlhXsKTbbAf_yoSa4Ww-HyM1cBpy4i_ZsokGxke_6SWKAXSbVurvmqTy09OU8v3dkF2O1adx68EDMb8HZH9oRdX9UbOilgwJsewZwfN6VcqYpCc2dVLGUNmk219wR_2T8zZ3ZVbtbgp0br_dratxpoSN1Dp9RwH0qBCcWIkmHNj72fTN99FevO5gnzY70hUKCO9YKmkTY0QkvOvYZYWWRTDH05X59NFvQuf1bWLy4y1XTjcpY_NK1hXTStfowiAoffchqj9_jfWdalmE1Sk3dqM4dfwhIWvL8JrajQLEpt7lvvFmEtde9pcLWawBY7MAZwH60ojtXrw0T5g0ZAif6S761dRxvJRhlVdpaHkn70GfJNlNzzps7Bx-7UGVdR0tybBWRSZSx4kwO3eCKpgLS93DdXebA-P8gzCfWuJM3BgAf-N-BQ_5MkauzfSupC0XWSVsFnUvVuaTxf214xccfJ2rk5cvZcuUD-v_amVrkTSF3XB6yC2XtU-8uiYLtk5Q0qcL3A5r4pDcrXPaRWNMqCdipgVn8Rva9eu-C3pYLIzvff3FhXfQI46dYytF1TdQJqlL9xMgyvz3Eva2t-x-J4RciDZGJTsWo1J3gGQW2eQ8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Lionel Messi",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "messi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "(41) 3333-5566",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/user/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"user",
+						"update",
+						"1"
+					]
+				},
+				"description": "Atualiza as informações do usuário autenticado na API."
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Conta do Usuário Autenticado",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBiNmY0OWNjYTcyN2FhMjUxODNjNzM4YjZhYjZkYWVjMjIzMGQ3ZjA3MmMzZjVkZWMxZTViMTRhMjNmNjRmOTg5YWI0N2VhOTExMTM2NDgyIn0.eyJhdWQiOiIxIiwianRpIjoiMGI2ZjQ5Y2NhNzI3YWEyNTE4M2M3MzhiNmFiNmRhZWMyMjMwZDdmMDcyYzNmNWRlYzFlNWIxNGEyM2Y2NGY5ODlhYjQ3ZWE5MTExMzY0ODIiLCJpYXQiOjE1NDA0MTQ4ODAsIm5iZiI6MTU0MDQxNDg4MCwiZXhwIjoxNTcxOTUwODgwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ggazY9ICv_FQ0ILRi59E38npGaOrhYofELzbkZ8EFK_AmoCje398AvHP9RuoFpAmlhXsKTbbAf_yoSa4Ww-HyM1cBpy4i_ZsokGxke_6SWKAXSbVurvmqTy09OU8v3dkF2O1adx68EDMb8HZH9oRdX9UbOilgwJsewZwfN6VcqYpCc2dVLGUNmk219wR_2T8zZ3ZVbtbgp0br_dratxpoSN1Dp9RwH0qBCcWIkmHNj72fTN99FevO5gnzY70hUKCO9YKmkTY0QkvOvYZYWWRTDH05X59NFvQuf1bWLy4y1XTjcpY_NK1hXTStfowiAoffchqj9_jfWdalmE1Sk3dqM4dfwhIWvL8JrajQLEpt7lvvFmEtde9pcLWawBY7MAZwH60ojtXrw0T5g0ZAif6S761dRxvJRhlVdpaHkn70GfJNlNzzps7Bx-7UGVdR0tybBWRSZSx4kwO3eCKpgLS93DdXebA-P8gzCfWuJM3BgAf-N-BQ_5MkauzfSupC0XWSVsFnUvVuaTxf214xccfJ2rk5cvZcuUD-v_amVrkTSF3XB6yC2XtU-8uiYLtk5Q0qcL3A5r4pDcrXPaRWNMqCdipgVn8Rva9eu-C3pYLIzvff3FhXfQI46dYytF1TdQJqlL9xMgyvz3Eva2t-x-J4RciDZGJTsWo1J3gGQW2eQ8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/user/destroy/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"user",
+						"destroy",
+						"1"
+					]
+				},
+				"description": "Apagar a conta do usuário autenticado na API."
+			},
+			"response": []
+		}
+	]
+}
