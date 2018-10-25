@@ -159,7 +159,7 @@
 			"response": []
 		},
 		{
-			"name": "Detalhes de um Usuário",
+			"name": "Detalhes de um Usuário [AUT]",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -196,7 +196,7 @@
 			"response": []
 		},
 		{
-			"name": "Logout",
+			"name": "Logout [AUT]",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -267,7 +267,7 @@
 			"response": []
 		},
 		{
-			"name": "Cadastrar Nova Mensagem",
+			"name": "Cadastrar Nova Mensagem [AUT]",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -393,7 +393,7 @@
 			"response": []
 		},
 		{
-			"name": "Alterar Mensagem Usuário Autenticado",
+			"name": "Alterar Mensagem Usuário Autenticado [AUT]",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -401,11 +401,6 @@
 						"key": "Accept",
 						"type": "text",
 						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBiNmY0OWNjYTcyN2FhMjUxODNjNzM4YjZhYjZkYWVjMjIzMGQ3ZjA3MmMzZjVkZWMxZTViMTRhMjNmNjRmOTg5YWI0N2VhOTExMTM2NDgyIn0.eyJhdWQiOiIxIiwianRpIjoiMGI2ZjQ5Y2NhNzI3YWEyNTE4M2M3MzhiNmFiNmRhZWMyMjMwZDdmMDcyYzNmNWRlYzFlNWIxNGEyM2Y2NGY5ODlhYjQ3ZWE5MTExMzY0ODIiLCJpYXQiOjE1NDA0MTQ4ODAsIm5iZiI6MTU0MDQxNDg4MCwiZXhwIjoxNTcxOTUwODgwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ggazY9ICv_FQ0ILRi59E38npGaOrhYofELzbkZ8EFK_AmoCje398AvHP9RuoFpAmlhXsKTbbAf_yoSa4Ww-HyM1cBpy4i_ZsokGxke_6SWKAXSbVurvmqTy09OU8v3dkF2O1adx68EDMb8HZH9oRdX9UbOilgwJsewZwfN6VcqYpCc2dVLGUNmk219wR_2T8zZ3ZVbtbgp0br_dratxpoSN1Dp9RwH0qBCcWIkmHNj72fTN99FevO5gnzY70hUKCO9YKmkTY0QkvOvYZYWWRTDH05X59NFvQuf1bWLy4y1XTjcpY_NK1hXTStfowiAoffchqj9_jfWdalmE1Sk3dqM4dfwhIWvL8JrajQLEpt7lvvFmEtde9pcLWawBY7MAZwH60ojtXrw0T5g0ZAif6S761dRxvJRhlVdpaHkn70GfJNlNzzps7Bx-7UGVdR0tybBWRSZSx4kwO3eCKpgLS93DdXebA-P8gzCfWuJM3BgAf-N-BQ_5MkauzfSupC0XWSVsFnUvVuaTxf214xccfJ2rk5cvZcuUD-v_amVrkTSF3XB6yC2XtU-8uiYLtk5Q0qcL3A5r4pDcrXPaRWNMqCdipgVn8Rva9eu-C3pYLIzvff3FhXfQI46dYytF1TdQJqlL9xMgyvz3Eva2t-x-J4RciDZGJTsWo1J3gGQW2eQ8"
 					},
 					{
 						"key": "X-Requested-With",
@@ -417,6 +412,11 @@
 						"name": "Content-Type",
 						"type": "text",
 						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBiNmY0OWNjYTcyN2FhMjUxODNjNzM4YjZhYjZkYWVjMjIzMGQ3ZjA3MmMzZjVkZWMxZTViMTRhMjNmNjRmOTg5YWI0N2VhOTExMTM2NDgyIn0.eyJhdWQiOiIxIiwianRpIjoiMGI2ZjQ5Y2NhNzI3YWEyNTE4M2M3MzhiNmFiNmRhZWMyMjMwZDdmMDcyYzNmNWRlYzFlNWIxNGEyM2Y2NGY5ODlhYjQ3ZWE5MTExMzY0ODIiLCJpYXQiOjE1NDA0MTQ4ODAsIm5iZiI6MTU0MDQxNDg4MCwiZXhwIjoxNTcxOTUwODgwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ggazY9ICv_FQ0ILRi59E38npGaOrhYofELzbkZ8EFK_AmoCje398AvHP9RuoFpAmlhXsKTbbAf_yoSa4Ww-HyM1cBpy4i_ZsokGxke_6SWKAXSbVurvmqTy09OU8v3dkF2O1adx68EDMb8HZH9oRdX9UbOilgwJsewZwfN6VcqYpCc2dVLGUNmk219wR_2T8zZ3ZVbtbgp0br_dratxpoSN1Dp9RwH0qBCcWIkmHNj72fTN99FevO5gnzY70hUKCO9YKmkTY0QkvOvYZYWWRTDH05X59NFvQuf1bWLy4y1XTjcpY_NK1hXTStfowiAoffchqj9_jfWdalmE1Sk3dqM4dfwhIWvL8JrajQLEpt7lvvFmEtde9pcLWawBY7MAZwH60ojtXrw0T5g0ZAif6S761dRxvJRhlVdpaHkn70GfJNlNzzps7Bx-7UGVdR0tybBWRSZSx4kwO3eCKpgLS93DdXebA-P8gzCfWuJM3BgAf-N-BQ_5MkauzfSupC0XWSVsFnUvVuaTxf214xccfJ2rk5cvZcuUD-v_amVrkTSF3XB6yC2XtU-8uiYLtk5Q0qcL3A5r4pDcrXPaRWNMqCdipgVn8Rva9eu-C3pYLIzvff3FhXfQI46dYytF1TdQJqlL9xMgyvz3Eva2t-x-J4RciDZGJTsWo1J3gGQW2eQ8"
 					}
 				],
 				"body": {
@@ -459,7 +459,7 @@
 			"response": []
 		},
 		{
-			"name": "Deletar Mensagem Usuário Autenticado",
+			"name": "Deletar Mensagem Usuário Autenticado [AUT]",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -498,7 +498,7 @@
 			"response": []
 		},
 		{
-			"name": "Alterar Info Usuário Autenticado",
+			"name": "Alterar Info Usuário Autenticado [AUT]",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -558,7 +558,7 @@
 			"response": []
 		},
 		{
-			"name": "Deletar Conta do Usuário Autenticado",
+			"name": "Deletar Conta do Usuário Autenticado [AUT]",
 			"request": {
 				"method": "GET",
 				"header": [
