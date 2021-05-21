@@ -18,7 +18,7 @@
 
 ## **Configurações**
 
-- Clonar este projeto utilizando o comando `git clone https://github.com/jgivago/laravel-api.git `
+- Clonar este projeto utilizando o comando `git clone https://github.com/jgivago/laravel-api.git`
 - Criar um database no **MySQL**
 - Criar uma cópia do **.env.example**, renomear para **.env** e preencher com os dados do seu ambiente local (Conexão com DB, Nome do DB, Debug, etc)
 - Executar o comando `composer install` para baixar todas as dependências necessárias
